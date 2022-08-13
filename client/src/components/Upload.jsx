@@ -165,7 +165,7 @@ const Upload = ({setOpen}) => {
         const res = await axiosInstance.post("/videos", {...input, tags})
         setOpen(false)
         const isUploaded = await axiosInstance.get(`/videos/find/${res.data._id}`);
-        (isUploaded && res.status === 200) ? navigate(`/video/${res.data._id}`) : {};
+        isUploaded && navigate(`/video/${res.data._id}`)
         
     };
 //-----------------------------------------------------------------------
