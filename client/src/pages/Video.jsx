@@ -145,7 +145,7 @@ function Video() {
   // console.log(path)
 
   const [channel, setChannel] = useState({});
-  const [video, setVideo] = useState({});
+
 
   useEffect(()=> {
     const fetchData = async () => {
@@ -154,10 +154,9 @@ function Video() {
           const channelRes = await axiosInstance.get(`/users/find/${videoRes.data.userId}`);
 
           setChannel(channelRes.data);
-          setVideo(videoRes.data);
           dispatch(fetchSuccess(videoRes.data)); 
 
-          console.log(currentVideo);
+          // console.log(res.data);
      
 //------------------------------------------------------------------------
         // axiosInstance.get(`/videos/find/${path}`).then((res) => {
@@ -199,23 +198,23 @@ function Video() {
       <Content>
         
         <VideoWrapper>
-          <VideoFrame src={video.videoUrl} controls alt="" />
+          <VideoFrame src={currentVideo.videoUrl} controls alt="" />
         </VideoWrapper>
        
-        <Title>{video.title}</Title>
-          <Info>{video.views} views · {format(video.createdAt)}</Info>
+        <Title>{currentVideo.title}</Title>
+          <Info>{currentVideo.views} views · {format(currentVideo.createdAt)}</Info>
         <Details>
         {currentUser && 
           <Buttons>
               <Button onClick={handleLike}>
-                {/* {video.likes.includes(channel._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
+                {currentVideo.likes.includes(currentUser._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
                 {" "}
-                {(video.likes).length} */}
+                {(currentVideo.likes).length}
               </Button>
 
               <Button onClick={handleDislike}>
-                {/* {video.dislikes.includes(channel._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
-                {" "} */}
+                {currentVideo.dislikes.includes(currentUser._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
+                {" "}
                 Dislike
               </Button>
           </Buttons>
@@ -230,7 +229,7 @@ function Video() {
             <ChannelDetail>
               <ChannelName>{channel.name}</ChannelName>
               <ChannelCounter>Subscribers: {channel.subscribers}</ChannelCounter>
-              <Description>{video.desc}</Description>
+              <Description>{currentVideo.desc}</Description>
             </ChannelDetail>
 
           </ChannelInfo>

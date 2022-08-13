@@ -9,6 +9,8 @@ import authRoutes from "./routes/auth.js";
 
 import cookieParser from "cookie-parser";
 
+import cors from "cors";
+
 import path from "path";
 import {fileURLToPath} from 'url';
 
@@ -24,6 +26,8 @@ const connect = () => {
 
 //middleware
 app.use(express.json())
+app.use(cors())
+
 
 app.use((err, req, res, next) => {
     const status = err.status || 500;
