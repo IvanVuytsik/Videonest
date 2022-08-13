@@ -9,7 +9,7 @@ import authRoutes from "./routes/auth.js";
 
 import cookieParser from "cookie-parser";
 
-import cors from "cors";
+const cors = require("cors");
 
 import path from "path";
 import {fileURLToPath} from 'url';
