@@ -10,7 +10,6 @@ import Video from "./pages/Video";
 import SignIn from "./pages/SignIn";
 import Search from "./pages/Search";
 
- 
 const Container = styled.div`
   display: flex;
   background-color: ${({theme}) => theme.bgLighter};
