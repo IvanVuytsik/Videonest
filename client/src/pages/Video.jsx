@@ -147,6 +147,8 @@ function Video() {
   const [channel, setChannel] = useState({});
   const [video, setVideo] = useState({});
 
+  const [channelId, setChannelId] = ([]);
+
   useEffect(()=> {
     const fetchData = async () => {
       try{
@@ -157,6 +159,8 @@ function Video() {
           setVideo(videoRes.data);
           dispatch(fetchSuccess(videoRes.data)); 
 
+
+          setChannelId(channel._id);
           console.log(currentVideo);
      
 //------------------------------------------------------------------------
@@ -208,13 +212,13 @@ function Video() {
         {currentUser && 
           <Buttons>
               <Button onClick={handleLike}>
-                {video.likes.includes(String(channel._id)) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
+                {video.likes.includes(channelId) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
                 {" "}
                 {(video.likes).length}
               </Button>
 
               <Button onClick={handleDislike}>
-                {video.dislikes.includes(String(channel._id)) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
+                {video.dislikes.includes(channelId) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
                 {" "}
                 Dislike
               </Button>
