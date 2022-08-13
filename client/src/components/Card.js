@@ -81,7 +81,7 @@ function Card({type, video}) {
 
   return (
 // {`/video/${video._id}`} style={{textDecoration:"none"}}
-  <Link to={`/video/${video._id}`} state={{videoUrl: video.videoUrl, likes: video.likes, dislikes: video.dislikes, videoId: video._id, createdAt: video.createdAt, tags: video.tags, videoDesc: video.desc, videoViews: video.views, videoTitle: video.title }} >
+  <Link to={`/video/${video._id}`} state={{linkData: video}} style={{textDecoration:"none"}}>
     <Container type={type}>
       <Image type={type} src={video.imgUrl} alt="" />
 
