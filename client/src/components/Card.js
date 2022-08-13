@@ -81,7 +81,7 @@ function Card({type, video}) {
 
   return (
 
-  <Link to={`api/video/${video._id}`} style={{textDecoration:"none"}}>
+  <Link to={`/${video._id}`} style={{textDecoration:"none"}}>
     <Container type={type}>
       <Image type={type} src={video.imgUrl} alt="" />
 
