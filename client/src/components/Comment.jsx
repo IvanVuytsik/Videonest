@@ -53,7 +53,7 @@ const Comment = ({comment, videoId}) => {
     useEffect(()=> {
     const fetchData = async () => {
       try{
-          axiosInstance.get(`/users/find/${comment.userId}`).then((res) => {
+          await axiosInstance.get(`/users/find/${comment.userId}`).then((res) => {
           setUser(res.data)});
       }catch(err){}
     } 
