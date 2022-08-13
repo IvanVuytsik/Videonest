@@ -147,7 +147,8 @@ function Video() {
   const [channel, setChannel] = useState({});
   const [video, setVideo] = useState({});
 
-  const [channelId, setChannelId] = ([]);
+  const [likes, setLikes] = ([])
+  const [dislikes, setDisikes] = ([])
 
   useEffect(()=> {
     const fetchData = async () => {
@@ -159,10 +160,9 @@ function Video() {
           setVideo(videoRes.data);
           dispatch(fetchSuccess(videoRes.data)); 
 
-
-          setChannelId(channel._id);
           console.log(currentVideo);
-     
+          setLikes(videoRes.likes);
+          setDislikes(videoRes.dislikes);
 //------------------------------------------------------------------------
         // axiosInstance.get(`/videos/find/${path}`).then((res) => {
           // dispatch(fetchSuccess(res.data));
@@ -212,13 +212,13 @@ function Video() {
         {currentUser && 
           <Buttons>
               <Button onClick={handleLike}>
-                {video.likes.includes(channelId) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
+                {likes.includes(channel._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
                 {" "}
-                {(video.likes).length}
+                {likes.length}
               </Button>
 
               <Button onClick={handleDislike}>
-                {video.dislikes.includes(channelId) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
+                {dislikes.includes(channel._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
                 {" "}
                 Dislike
               </Button>
