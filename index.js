@@ -8,6 +8,7 @@ import commentRoutes from "./routes/comments.js";
 import authRoutes from "./routes/auth.js";
 
 import cookieParser from "cookie-parser";
+const path = require("path");
 
 const app = express();
 dotenv.config();
