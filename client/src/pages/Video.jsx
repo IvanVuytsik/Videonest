@@ -208,13 +208,13 @@ function Video() {
         {currentUser && 
           <Buttons>
               <Button onClick={handleLike}>
-                {currentVideo.likes.includes(currentUser._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
+                {video.likes.includes(currentUser._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
                 {" "}
-                {(currentVideo.likes).length}
+                {(video.likes).length}
               </Button>
 
               <Button onClick={handleDislike}>
-                {currentVideo.dislikes.includes(currentUser._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
+                {video.dislikes.includes(currentUser._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
                 {" "}
                 Dislike
               </Button>
