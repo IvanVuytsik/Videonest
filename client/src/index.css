@@ -1,0 +1,24 @@
+*, **, html, body, ::after, ::before {
+    font-family: Varela, sans-serif;
+    color: var(--color-white);
+} 
+
+:root{
+    --color-bg: #dfdddd;
+    --color-bg-lighter: #ece8e8;
+    --color-bg-darker: #474747;
+    --color-bg-var: #2c2c30;
+
+    --color-text-light: #aaaaaa;
+    --color-text-soft: #6a6969;
+    --color-text-dark: #47474c;
+ 
+    --color-one: #F73859;
+    --color-three: #F05454;
+    --color-two: #ff9f00;
+
+    --color-black: #222831;
+    --color-white: #fcfcfc;
+    --color-highlight: #e2bf77;
+    --color-light: rgba(185, 185, 185, 0.2);
+}

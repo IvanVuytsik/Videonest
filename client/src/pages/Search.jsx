@@ -1,0 +1,35 @@
+import React, {useState, useEffect} from 'react';
+import styled from "styled-components";
+import {axiosInstance} from "../config.js";
+import { useLocation } from 'react-router-dom';
+import Card from "../components/Card.js";
+
+const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+`;
+
+const Search = () => {
+
+    const [videos, setVideos] = useState([]);
+    const query = useLocation().search
+
+    useEffect(() => {
+        const fetchVideos = async () => {
+            const res = await axiosInstance.get(`/videos/search/${query}`)
+            setVideos(res.data)
+        }
+        fetchVideos();
+    }, [query]); 
+
+  return (
+    <Container>
+        {videos.map((video) => (
+            <Card key={video._id} video={video} />
+        ))};
+    </Container> 
+  )
+}
+
+export default Search
