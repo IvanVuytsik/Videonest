@@ -197,10 +197,11 @@ function Video() {
   return (
     <Container> 
       <Content>
+        {currentVideo && 
         <VideoWrapper>
           <VideoFrame src={currentVideo.videoUrl} controls alt="" />
         </VideoWrapper>
-
+        }
         <Title>{currentVideo.title}</Title>
           <Info>{currentVideo.views} views · {format(currentVideo.createdAt)}</Info>
         <Details>
