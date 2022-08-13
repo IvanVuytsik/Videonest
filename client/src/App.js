@@ -47,9 +47,9 @@ function App() {
 
                     <Route path="signin" element={<SignIn />} /> 
 
-                    <Route path="video">
-                      <Route path=":id" element={<Video />} /> 
-                    </Route>
+                    <Route path="video/:id" element={<Video />} />
+                      {/* <Route path=":id" element={<Video />} />  */}
+                    {/* </Route> */}
 
                   </Route>
                 </Routes>
