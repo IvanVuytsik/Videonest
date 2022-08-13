@@ -9,7 +9,7 @@ import authRoutes from "./routes/auth.js";
 
 import cookieParser from "cookie-parser";
 
-const cors = require("cors");
+
 
 import path from "path";
 import {fileURLToPath} from 'url';
@@ -17,7 +17,11 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const app = express();
+
+
+// const app = express();
+const app = require('express')()
+const cors = require("cors");
 dotenv.config();
 
 const connect = () => {
