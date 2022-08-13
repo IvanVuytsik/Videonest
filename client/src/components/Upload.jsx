@@ -164,7 +164,7 @@ const Upload = ({setOpen}) => {
         e.preventDefault()
         const res = await axiosInstance.post("/videos", {...input, tags})
         setOpen(false)
-        res.status === 200 && navigate(`/video/${res.data._id}`)
+        res.status === 200 && setTimeout(navigate(`/video/${res.data._id}`), 10000)
     };
 //-----------------------------------------------------------------------
 
