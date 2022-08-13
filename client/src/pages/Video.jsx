@@ -146,12 +146,13 @@ function Video() {
 
   const [channel, setChannel] = useState({});
 
+
   useEffect(()=> {
     const fetchData = async () => {
       try{
         axiosInstance.get(`/videos/find/${path}`).then((res) => {
         dispatch(fetchSuccess(res.data));
-        // console.log(res.data);
+        console.log(res.data);
 
         axiosInstance.get(`/users/find/${res.data.userId}`).then((res) => {
         setChannel(res.data);
@@ -166,7 +167,7 @@ function Video() {
         // );
         // setChannel(channelRes.data);
         // dispatch(fetchSuccess(videoRes.data));
- 
+     
           
       }catch(err){}
     } 
@@ -197,11 +198,11 @@ function Video() {
   return (
     <Container> 
       <Content>
-        {currentVideo && 
+        
         <VideoWrapper>
           <VideoFrame src={currentVideo.videoUrl} controls alt="" />
         </VideoWrapper>
-        }
+       
         <Title>{currentVideo.title}</Title>
           <Info>{currentVideo.views} views · {format(currentVideo.createdAt)}</Info>
         <Details>
