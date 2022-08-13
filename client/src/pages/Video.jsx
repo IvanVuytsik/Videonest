@@ -150,23 +150,21 @@ function Video() {
   useEffect(()=> {
     const fetchData = async () => {
       try{
-        axiosInstance.get(`/videos/find/${path}`).then((res) => {
-        dispatch(fetchSuccess(res.data));
-        console.log(res.data);
+          const videoRes = await axiosInstance.get(`/videos/find/${path}`);
+          const channelRes = await axiosInstance.get(`/users/find/${videoRes.data.userId}`);
 
-        axiosInstance.get(`/users/find/${res.data.userId}`).then((res) => {
-        setChannel(res.data);
+          setChannel(channelRes.data);
+          dispatch(fetchSuccess(videoRes.data)); 
 
-        // console.log(res.data);
-          });
-        });
-
-        // const videoRes = await axios.get(`/videos/find/${path}`);
-        // const channelRes = await axios.get(
-        //   `/users/find/${videoRes.data.userId}`
-        // );
-        // setChannel(channelRes.data);
-        // dispatch(fetchSuccess(videoRes.data));
+          // console.log(res.data);
+     
+//------------------------------------------------------------------------
+        // axiosInstance.get(`/videos/find/${path}`).then((res) => {
+          // dispatch(fetchSuccess(res.data));
+          
+  
+          // axiosInstance.get(`/users/find/${res.data.userId}`).then((res) => {
+          // setChannel(res.data);
      
           
       }catch(err){}
