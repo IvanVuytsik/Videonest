@@ -10,12 +10,6 @@ import Video from "./pages/Video";
 import SignIn from "./pages/SignIn";
 import Search from "./pages/Search";
 
-import express from "express";
-import cors from "cors";
-const app = express();
-app.use(express.json())
-app.use(cors())
-
 const Container = styled.div`
   display: flex;
   background-color: ${({theme}) => theme.bgLighter};
