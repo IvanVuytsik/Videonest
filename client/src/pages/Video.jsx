@@ -148,7 +148,7 @@ function Video() {
   const [video, setVideo] = useState({});
 
   const [likes, setLikes] = ([])
-  const [dislikes, setDisikes] = ([])
+  const [dislikes, setDislikes] = ([])
 
   useEffect(()=> {
     const fetchData = async () => {
