@@ -147,6 +147,9 @@ function Video() {
   const [channel, setChannel] = useState({});
 
 
+  const location = useLocation();
+  const { videoTitle, tags, videoDesc, videoViews, videoUrl, likes, dislikes, videoId, createdAt } = location.state;
+  
   useEffect(()=> {
     const fetchData = async () => {
       try{
@@ -174,13 +177,13 @@ function Video() {
 
 
   const handleLike = async () => {
-      await axiosInstance.put(`/users/like/${currentVideo._id}`)
-      dispatch(like(currentUser._id))
+      await axiosInstance.put(`/users/like/${videoId}`)
+      dispatch(like(channel._id))
   }
 
   const handleDislike = async () => {
-      await axiosInstance.put(`/users/dislike/${currentVideo._id}`)
-      dispatch(dislike(currentUser._id))
+      await axiosInstance.put(`/users/dislike/${videoId}`)
+      dispatch(dislike(channel._id))
   }
 
 
@@ -198,22 +201,22 @@ function Video() {
       <Content>
         
         <VideoWrapper>
-          <VideoFrame src={currentVideo.videoUrl} controls alt="" />
+          <VideoFrame src={videoUrl} controls alt="" />
         </VideoWrapper>
        
-        <Title>{currentVideo.title}</Title>
-          <Info>{currentVideo.views} views · {format(currentVideo.createdAt)}</Info>
+        <Title>{videoTitle}</Title>
+          <Info>{videoViews} views · {format(createdAt)}</Info>
         <Details>
         {currentUser && 
           <Buttons>
               <Button onClick={handleLike}>
-                {currentVideo.likes.includes(currentUser._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
+                {likes.includes(channel._id) ? (<ThumbUpIcon />) : (<ThumbUpOffAltIcon />)}
                 {" "}
-                {(currentVideo.likes).length}
+                {(likes).length}
               </Button>
 
               <Button onClick={handleDislike}>
-                {currentVideo.dislikes.includes(currentUser._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
+                {dislikes.includes(channel._id) ? (<ThumbDownIcon />) : (<ThumbDownOffAltIcon />)}
                 {" "}
                 Dislike
               </Button>
@@ -229,7 +232,7 @@ function Video() {
             <ChannelDetail>
               <ChannelName>{channel.name}</ChannelName>
               <ChannelCounter>Subscribers: {channel.subscribers}</ChannelCounter>
-              <Description>{currentVideo.desc}</Description>
+              <Description>{videoDesc}</Description>
             </ChannelDetail>
 
           </ChannelInfo>
@@ -245,11 +248,11 @@ function Video() {
 
         <Hr />
 
-        <Comments videoId={currentVideo._id} />
+        <Comments videoId={videoId} />
 
       </Content>
 
-      <Recommendation tags={currentVideo.tags} />
+      <Recommendation tags={tags} />
 
     </Container>
   )

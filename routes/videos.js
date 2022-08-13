@@ -9,8 +9,6 @@ router.post("/", verifyToken, addVideo);
 router.put("/:id", verifyToken, updateVideo);
 router.delete("/:id", verifyToken, deleteVideo);
 router.get("/find/:id", getVideo);
-router.get("/video/:id", getVideo);
-
 
 router.put("/view/:id", addView);
 router.get("/trend", trend);
