@@ -198,7 +198,7 @@ function Video() {
     <Container> 
       <Content>
         <VideoWrapper>
-          <VideoFrame src={currentVideo.videoUrl} controls />
+          <VideoFrame src={currentVideo.videoUrl} controls alt="" />
         </VideoWrapper>
 
         <Title>{currentVideo.title}</Title>
