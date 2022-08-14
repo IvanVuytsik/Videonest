@@ -74,7 +74,6 @@ const User = styled.div`
   font-weight: 500;
   
   svg {
-    color: ${({theme}) => theme.text};
 
     &:hover {
       color: var(--color-highlight);

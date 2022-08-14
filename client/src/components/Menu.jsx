@@ -25,6 +25,13 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 1rem 1.5rem;
     color: ${({theme}) => theme.text};
+
+    a {
+      color: ${({theme}) => theme.text};
+      svg {
+        color: ${({theme}) => theme.text};
+      }
+    }
 `;
 
 const Logo = styled.div`
