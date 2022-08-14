@@ -67,12 +67,12 @@ const Button = styled.button`
 
  
 const User = styled.div`
+  color: ${({theme}) => theme.text};
   display: flex;
   align-items: center;
   gap: 1rem;
   font-weight: 500;
-  color: ${({theme}) => theme.text};
-
+  
   svg {
     color: ${({theme}) => theme.text};
 
@@ -110,7 +110,7 @@ function Navbar() {
 
         {currentUser ? (
           <User>
-            <VideoCallIcon onClick={() => setOpen(true)} style={{height: "2rem", width: "2rem", cursor: "pointer", color: "${({theme}) => theme.text}"}} />
+            <VideoCallIcon onClick={() => setOpen(true)} style={{height: "2rem", width: "2rem", cursor: "pointer"}} />
             <Avatar src={currentUser.img} />
             {currentUser.name}
           </User>
