@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { darkTheme, lightTheme } from "./utils/Theme";
+import { darkTheme, lightTheme } from "./utils/Theme.js";
 import styled, { ThemeProvider } from "styled-components";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";

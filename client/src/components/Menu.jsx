@@ -12,22 +12,6 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-
-// import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-// import HistoryIcon from '@mui/icons-material/History';
-
-// import SettingsIcon from '@mui/icons-material/Settings';
-// import FlagIcon from '@mui/icons-material/Flag';
-// import HelpIcon from '@mui/icons-material/Help';
-
-// import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-// import SportsScoreIcon from '@mui/icons-material/SportsScore';
-// import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-// import TheatersIcon from '@mui/icons-material/Theaters';
-// import LiveTvIcon from '@mui/icons-material/LiveTv';
-// import RssFeedIcon from '@mui/icons-material/RssFeed';
-
-
 const Container = styled.div`
     flex: 1;
     background-color: ${({theme}) => theme.bg};
@@ -40,6 +24,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     padding: 1rem 1.5rem;
+    color: ${({theme}) => theme.text};
 `;
 
 const Logo = styled.div`
@@ -129,10 +114,6 @@ const Menu = ({ darkMode, setDarkMode }) => {
             <Item><SubscriptionsIcon />Subscriptions </Item>
         </Link>
 
-
-        {/* <Hr />
-        <Item><LibraryBooksIcon />Library </Item>
-        <Item><HistoryIcon />History </Item> */}
         <Hr />
 
         {!currentUser ? (
@@ -154,19 +135,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           </>
           )
         }
- 
- 
-        {/* <Item><LibraryMusicIcon /> Music </Item>
-        <Item><SportsScoreIcon />Sports </Item>
-        <Item><SportsEsportsIcon />Games </Item>
-        <Item><TheatersIcon />Movies </Item>
-        <Item><RssFeedIcon />News </Item>
-        <Item><LiveTvIcon />Live </Item>
-        <Hr />
-        <Item><SettingsIcon />Settings </Item>
-        <Item><FlagIcon />Report </Item>
-        <Item><HelpIcon />Help </Item> */}
-        {/* <Hr /> */}
+
         <Item onClick={() => setDarkMode(!darkMode)}><SettingsBrightnessIcon />{darkMode ? "Light" : "Dark"} Mode</Item>
 
       </Wrapper>

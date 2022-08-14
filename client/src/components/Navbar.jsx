@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100%; 
   padding: 0 1rem;
+  color: ${({theme}) => theme.text};
   justify-content: flex-end;
   position: relative;
 `;
