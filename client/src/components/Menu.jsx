@@ -138,7 +138,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           )
         }
 
-        <Item onClick={() => setDarkMode(!darkMode)}><SettingsBrightnessIcon style={{ color: "inherit" }} />{darkMode ? "Light" : "Dark"} Mode</Item>
+        <Item onClick={() => setDarkMode(!darkMode)}><SettingsBrightnessIcon style={{ color: `${({theme}) => theme.text}` }} />{darkMode ? "Light" : "Dark"} Mode</Item>
 
       </Wrapper>
     </Container>
