@@ -74,6 +74,8 @@ const User = styled.div`
   color: ${({theme}) => theme.text};
 
   svg {
+    color: ${({theme}) => theme.text};
+
     &:hover {
       color: var(--color-highlight);
       transition: 0.3s ease-in-out 100ms  
@@ -108,7 +110,7 @@ function Navbar() {
 
         {currentUser ? (
           <User>
-            <VideoCallIcon onClick={() => setOpen(true)} style={{height: "2rem", width: "2rem", cursor: "pointer"}} />
+            <VideoCallIcon onClick={() => setOpen(true)} style={{height: "2rem", width: "2rem", cursor: "pointer", color: "${({theme}) => theme.text}"}} />
             <Avatar src={currentUser.img} />
             {currentUser.name}
           </User>
