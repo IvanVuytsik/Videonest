@@ -4,7 +4,7 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // console.log(FIREBASE_API)
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC5QnZ-hScJH5FJlEUCQEri7xmGHEqX02k",
+  apiKey: process.env.FIREBASE_API,
   authDomain: "videonest-1d435.firebaseapp.com",
   projectId: "videonest-1d435",
   storageBucket: "videonest-1d435.appspot.com",
