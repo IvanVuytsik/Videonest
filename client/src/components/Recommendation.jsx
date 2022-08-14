@@ -22,7 +22,7 @@ const Recommendation = ({tags}) => {
     <Container>
         {videos.map((video) => (
             <Card type="sm" key={video._id} video={video} />
-        ))};
+        ))}
     </Container>
   );
 };

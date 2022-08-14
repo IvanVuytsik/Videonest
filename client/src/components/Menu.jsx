@@ -34,6 +34,7 @@ const Logo = styled.div`
     font-size: 1.4rem;
     font-weight: 400;
     margin-bottom: 2rem;
+    color: ${({theme}) => theme.text};
 `;
 
 const Image = styled.img`
@@ -46,6 +47,7 @@ const Item = styled.div`
     gap: 1rem;
     align-items: center;
     cursor: pointer;
+    color: ${({theme}) => theme.text};
     padding: 0.5rem 0;
 
     &:hover{
